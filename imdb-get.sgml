@@ -1,0 +1,288 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>Matthew</firstname>">
+  <!ENTITY dhsurname   "<surname>Johnson</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>November  19, 2006</date>">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). -->
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>&lt;debian@matthew.ath.cx&gt;</email>">
+  <!ENTITY dhusername  "Matthew Johnson">
+  <!ENTITY dhucpackage "<refentrytitle>IMDB-TOOLS</refentrytitle>">
+  <!ENTITY dhpackage   "imdb-get">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+  ]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2006</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>Looks up IMDB data for a film.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+         <arg><option>options</option></arg>
+         <arg><option>--imdb-id <replaceable>id</replaceable></option></arg>
+         <arg><option>-l <replaceable>id</replaceable></option></arg>
+         <arg><option>--search <replaceable>search string</replaceable></option></arg>
+         <arg><option>-s <replaceable>search string</replaceable></option></arg>
+         <arg><option>--filename <replaceable>filename</replaceable></option></arg>
+         <arg><option>-f <replaceable>filename</replaceable></option></arg>
+         <arg><option>-h </option></arg>
+         <arg><option>--help</option></arg>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para>This manual page documents briefly the
+      <command>&dhpackage;</command> command.</para>
+
+    <para><command>&dhpackage;</command> has three modes. It can be called with
+    imdb ID and a set of details to print, in which case it will retrieve those
+    details either from the cache or IMDB. Secondly, it can be called with a
+    filename in which case it will look the file up in the cache (resolving
+          symlinks as appropriate and checking for multiple disks from the same
+          film) and if that fails it will use the filename to search IMDB.
+    Alternatively it may be used with just a search string, which will always
+    search IMDB.
+    </para>
+
+
+  </refsect1>
+  <refsect1>
+    <title>OPTIONS</title>
+
+    <para>These programs follow the usual &gnu; command line syntax,
+      with long options starting with two dashes (`-').  A summary of
+      options is included below. 
+    </para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>-h</option>
+          <option>--help</option>
+        </term>
+        <listitem>
+          <para>Print syntax and options.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-l</option>
+          <option>--imdb-id</option>
+        </term>
+        <listitem>
+          <para>Specify IMDBID to use in queries.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-s</option>
+          <option>--search</option>
+        </term>
+        <listitem>
+          <para>Specify search string to use in queries.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-f</option>
+          <option>--filename</option>
+        </term>
+        <listitem>
+          <para>Specify filename. Will be used to form search queries
+          if no ID or search string is specified.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-i</option>
+          <option>--id</option>
+        </term>
+        <listitem>
+          <para>Print IMDB ID (default if nothing else is selected).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-t</option>
+          <option>--title</option>
+        </term>
+        <listitem>
+          <para>Print film title.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-g</option>
+          <option>--genre</option>
+        </term>
+        <listitem>
+          <para>Print film genres.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>--tag</option>
+        </term>
+        <listitem>
+          <para>Print film tag line.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-y</option>
+          <option>--year</option>
+        </term>
+        <listitem>
+          <para>Print film year.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-c</option>
+          <option>--cover</option>
+        </term>
+        <listitem>
+          <para>Print cover art URI.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-m</option>
+          <option>--print-filename</option>
+        </term>
+        <listitem>
+          <para>Print film genres.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-a</option>
+          <option>--all</option>
+        </term>
+        <listitem>
+          <para>Print all film details.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-e</option>
+          <option>--cachedir</option>
+        </term>
+        <listitem>
+          <para>Set cache directory.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-d</option>
+          <option>--download-cover</option>
+        </term>
+        <listitem>
+          <para>Download cover art locally.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-r</option>
+          <option>--refresh</option>
+        </term>
+        <listitem>
+          <para>Force an update from IMDB not the cache.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-n</option>
+          <option>--rename</option>
+        </term>
+        <listitem>
+          <para>Rename file based on IMDB title.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-u</option>
+          <option>--update-filename</option>
+        </term>
+        <listitem>
+          <para>Update the filename in a stored record</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>--prune-duplicates</option>
+        </term>
+        <listitem>
+          <para>Removes cache files with duplicate filename entries.
+          (Removes all but the most recently modified cache file)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>--refresh-cache</option>
+        </term>
+        <listitem>
+          <para>Refresh all the details in the cache from IMDB
+          (may be slow).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+     <title>FILES</title>
+
+     <para>Config options are read from /etc/imdbgetrc or $HOME/.imdbgetrc</para>
+  </refsect1>
+  <refsect1>
+     <title>SEE ALSO</title>
+
+     <para>imdb(1) imdb-rename(1) imdb-link(1) imdb-update-cache(1) imdbgetrc(5) imdb-fxd(1)</para>
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was written by &dhusername; &dhemail;. Permission is
+      granted to copy, distribute and/or modify this document under
+      the terms of the &gnu; General Public License, Version 2 as
+      published by the Free Software Foundation.
+    </para>
+	<para>
+	  On Debian systems, the complete text of the GNU General Public
+	  License can be found in /usr/share/common-licenses/GPL-2.
+	</para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

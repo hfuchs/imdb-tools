@@ -1,0 +1,54 @@
+Version 0.9:
+
+   * Fix parsing from imdb.com
+
+Version 0.8:
+
+	* Patch from badenpj1 <peet.badenhorst@gmail.com> to cover user ratings
+	  and assorted other tidyups.
+
+Version 0.7:
+
+	* Patch from Daniel <danielhotz@online.de> to be more tolerent of tag
+	  rewriting and use full-size images
+	* Apply patch from Daniel <danielhotz@online.de> which adds
+	  parsing of writer, director, plot and cast, with associated
+	  flags.
+	* Fix imdb-link for new | separator in genre
+	* Update imdb-fxd to include plot
+	* Fix --tag short opt to be -T
+
+Version 0.6:
+
+	* Fix genre parsing in new imdb website format 
+
+Version 0.5:
+
+	* Fix harmless 'file not found' warning message 
+	* Update to new imdb website format
+
+Version 0.4:
+
+	* Add imdb-fxd
+	* Fix command-rename in README
+	* Change quoting to allow apostrophes in titles
+
+Version 0.3:
+	
+	* fix nuking filenames bug on --refresh-cache
+	* Add indexing for speed improvement
+	* Fix indexing and lookup of other names
+	* Add --no-net parameter
+	* Add --version option
+	* Add prune duplicates option
+
+Version 0.2:
+
+	* Rename commands to all start with imdb-
+	* Add imdb wrapper a-la git
+	* Use DESTDIR properly in makefiles
+	* Add signal handler to imdb-get to remove temp files if killed
+
+Version 0.1:
+
+	* Initial code and packaging

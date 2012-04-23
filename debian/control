@@ -1,0 +1,13 @@
+Source: imdb-tools
+Section: utils
+Priority: optional
+Maintainer: Matthew Johnson <mjj29@debian.org>
+Build-Depends: debhelper (>= 7.0.0), docbook-to-man
+Standards-Version: 3.9.1
+
+Package: imdb-tools
+Architecture: all
+Depends: curl, realpath, tidy
+Description: Lookup film details on IMDB
+ The IMDB tools lookup film details on the Internet Movie Database:
+ www.imdb.com, cache them and associate the details with filenames.

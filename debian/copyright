@@ -1,0 +1,15 @@
+This package was debianized by Matthew Johnson <debian@matthew.ath.cx> on Sun,
+19 Nov 2006 21:22:09 +0000.
+
+It was downloaded from http://www.matthew.ath.cx/projects/imdb-tools
+
+Copyright:
+
+Upstream Author: Matthew Johnson <debian@matthew.ath.cx>
+
+This software is Copyright (c) 2006 by Matthew Johnson.
+
+You are free to distribute this software under the terms of the GNU General
+Public License version 2.  On Debian systems, the complete text of the GNU
+General Public License can be found in the file
+`/usr/share/common-licenses/GPL-2'.

@@ -1,0 +1,13 @@
+IMDB tools installation guide
+-----------------------------
+
+Prerequisites
+-------------
+
+To compile and install IMDB-tools you will need docbook-to-man
+
+The tools can be compiled and installed with `make' and `make install'
+respectively. By default they will be installed into /usr/local/bin with the
+man pages in /usr/local/share/man. This location can be configured by giving PREFIX, BINPREFIX and MANPREFIX variables to make.
+
+To run imdb-get you will need curl, realpath and tidy

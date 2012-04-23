@@ -1,0 +1,104 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>Matthew</firstname>">
+  <!ENTITY dhsurname   "<surname>Johnson</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>November  19, 2006</date>">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). -->
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>&lt;debian@matthew.ath.cx&gt;</email>">
+  <!ENTITY dhusername  "Matthew Johnson">
+  <!ENTITY dhucpackage "<refentrytitle>IMDB-TOOLS</refentrytitle>">
+  <!ENTITY dhpackage   "imdb-link">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2006</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>Links films based on their genre.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+         <arg><replaceable>target directory</replaceable></arg>
+         <arg><replaceable>files</replaceable></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para>This manual page documents briefly the
+      <command>&dhpackage;</command> command.</para>
+
+    <para><command>&dhpackage;</command> links the given files
+    to the target directory in subdirectories based on the genres
+    IMDB has for that file.
+    </para>
+
+
+  </refsect1>
+  <refsect1>
+     <title>SEE ALSO</title>
+
+     <para>imdb(1) imdb-get(1) imdb-rename(1) imdb-update-cache(1) imdb-fxd(1)</para>
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was written by &dhusername; &dhemail;. Permission is
+      granted to copy, distribute and/or modify this document under
+      the terms of the &gnu; General Public License, Version 2 as
+      published by the Free Software Foundation.
+    </para>
+	<para>
+	  On Debian systems, the complete text of the GNU General Public
+	  License can be found in /usr/share/common-licenses/GPL-2.
+	</para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

@@ -1,0 +1,72 @@
+imdb-tools (0.9-1) unstable; urgency=low
+
+  * New upstream release (Closes: #591774)
+  * Bump standards and compat versions
+  * Move to source format 3.0
+
+ -- Matthew Johnson <mjj29@debian.org>  Thu, 05 Aug 2010 16:38:47 +0100
+
+imdb-tools (0.8-1) unstable; urgency=low
+
+  * New upstream release (Closes: #519603, LP: #313260)
+
+ -- Matthew Johnson <mjj29@debian.org>  Sat, 14 Mar 2009 10:44:52 +0000
+
+imdb-tools (0.7-1) unstable; urgency=low
+
+  * New upstream release (Closes: #486390, #486393)
+
+ -- Matthew Johnson <mjj29@debian.org>  Sun, 22 Jun 2008 23:14:31 +0100
+
+imdb-tools (0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standards-Version
+
+ -- Matthew Johnson <mjj29@debian.org>  Thu, 20 Mar 2008 11:11:31 +0000
+
+imdb-tools (0.5-1) unstable; urgency=low
+
+  * New upstream version
+    - works with new IMDB search page format
+    - fix minor aesthetic bug
+  * Update maintainer address 
+
+ -- Matthew Johnson <mjj29@debian.org>  Wed, 05 Dec 2007 10:24:03 +0000
+
+imdb-tools (0.4-2) unstable; urgency=low
+
+  * Add watch file 
+
+ -- Matthew Johnson <debian@matthew.ath.cx>  Thu,  9 Aug 2007 12:30:18 +0100
+
+imdb-tools (0.4-1) unstable; urgency=low
+
+  * New Upstream Release
+  * Explain IMDB in long description
+
+ -- Matthew Johnson <debian@matthew.ath.cx>  Tue, 29 May 2007 14:19:59 +0100
+
+imdb-tools (0.3-1) unstable; urgency=low
+
+  * New upstream release fixing data loss bug
+  * Remove lintian file and full stops
+  * Closes: #413406
+
+ -- Matthew Johnson <debian@matthew.ath.cx>  Sun,  4 Mar 2007 19:54:15 +0000
+
+imdb-tools (0.2-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Packaging with DESTDIR properly now
+  * arch=all not arch=any
+  * Build in -indep not -arch 
+
+ -- Matthew Johnson <debian@matthew.ath.cx>  Tue, 28 Nov 2006 13:44:09 +0000
+
+imdb-tools (0.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Matthew Johnson <debian@matthew.ath.cx>  Sun,  19 Nov 2006 21:22:09 +0000
+

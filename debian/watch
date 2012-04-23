@@ -1,0 +1,2 @@
+version=3
+http://www.matthew.ath.cx/projects/imdb-tools (?:.*/)?imdb-tools-?_?([\d+\.]+|\d+)\.tar.* debian uupdate

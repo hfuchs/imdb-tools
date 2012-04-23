@@ -1,0 +1,39 @@
+IDMB-TOOLS v0.4
+---------------
+
+The IMDB toolkit allows you to query IMDB from the command line and retrieve
+titles, cover art, genres, years etc. IMDB can be queried by ID or search
+string. Details can be stored in a cache to be accessed later.
+
+The main program in the suite is imdb-get. This is documented in full in the
+manpage but essentially has three modes. It can be called with imdb ID and a
+set of details to print, in which case it will retrieve those details either
+from the cache or IMDB. Secondly, it can be called with a filename in which
+case it will look the file up in the cache (resolving symlinks as appropriate
+and checking for multiple disks from the same film) and if that fails it will
+use the filename to search IMDB. Alternatively it may be used with just a
+search string, which will always search IMDB.
+
+All the other programs call imdb-get.
+
+imdb-rename renames files to Title.ext based upon their IMDB data.
+
+imdb-link takes a file and a target directory, looks up the IMDB data for the
+file and for each genre in the data creates a link to the file in target/genre/
+
+imdb-update-cache takes a directory and ensures there is IMDB data in the cache
+for every file in the directory.
+
+imdb-fxd allows this IMDB system to integrate with the Freevo PVR software.
+It exports entries from the cache to the FXD format which freevo uses to
+manage stored films. This allows you to group multiple files to one film and
+display all the IMDB data and cover art.
+
+Most of the programs are usable without the cache, but will be slow and may
+require selecting from a list each time, so a cache is recommended.
+
+Config files
+------------
+
+The files /etc/imdbgetrc and $HOME/.imdbgetrc are used to get default options
+if they are not specified on the command line. These files are documented in the imdbgetrc(5) manual page.
