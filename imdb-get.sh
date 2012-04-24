@@ -32,7 +32,7 @@ syntax() {
    echo "	--plot -p - Print plot."
    echo "	--year -y - Print year."
    echo "	--cast -C - Print cast."
-   echo "       --rating -R - Print rating."
+   echo "	--rating -R - Print rating."
    echo "	--cover -c - Print cover art URI."
    echo "	--print-filename -m - Print filename."
    echo "	--all -a - Print all details."
@@ -107,17 +107,17 @@ doIMDB() {
       echo "filename: $FILENAME"
    fi
 
-   doItem $TEMP "$SAVE" "/^<title>/s,^.*$,$1,p" id $1 $ID
-   doItem $TEMP "$SAVE" '/^<title>/s,<title>\(.*\) ([^)]*)<\/title>,\1,p' title $1 $TITLE
-   doItem $TEMP "$SAVE" '/^<title>/s,<title>.* (\([^)]*\))<\/title>,\1,p' year $1 $YEAR
-   doItem $TEMP "$SAVE" '/<h5>Director/,+6{s| *and<|<|g;s|<[^>]*>||g;/Director/,+6s| *&#38;||g;s|\([0-9a-z)]\)\([A-Z]\)|\1, \2|g;s|more$||;/Director/d;P}' director $1 $DIRECTOR
-   doItem $TEMP "$SAVE" '/<h5>Writer/,+6{s| *and<|<|g;s|<[^>]*>||g;/Writer/,+6s| *&#38;||g;s|)\([A-Z]\)|), \1|g;s|more$||;s| \.\.\. *|, \.\.\.|;/Writer/d;P}' writer $1 $WRITER
-   doItem $TEMP "$SAVE" '/^<h5>Tagline:<.h5>/,+2s,^\([^<]*\).*,\1,p' tagline $1 $TAG
-   doItem $TEMP "$SAVE" '/^<h5>Plot:<.h5>/,+2s,^\([^|<]*\).*,\1,p' plot $1 $PLOT
-   doItem $TEMP "$SAVE" '/<h5>Genre:<\/h5>/,+2s/[<(][^>)]*[>)]//g;/^Genre:/,+2s/\(.*\)).*/\1/p' genre $1 $GENRE
-   doItem $TEMP "$SAVE" '/<table class="cast">/ {s|^.*<table class="cast"> *||;s|<form action.*||;s|\([0-9a-z)]\)\([A-Z]\)|\1::\2|g;s|>more.*|>|;s|<[^>]*>||g;s|\([0-9a-z)]\)\([A-Z]\)|\1, \2|g;s|::||g;s| \.\.\. | as |gp}' cast $1 $CAST
-   doItem $TEMP "$SAVE" '/^<a name="poster"/s,SY140_SX100,SY400_SX600,;s,<a name="poster".*<img .*src="\([^"]*\).*</a>,\1,p' coverart $1 $COVER
-   doItem $TEMP "$SAVE" '/^<b>.*\/10<\/b>/s,<b>\(.*\)\/10<\/b>,\1,p' rating $1 $RATING
+   doItem $TEMP "$SAVE" "/^ *<title>/s,^.*$,$1,p" id $1 $ID
+   doItem $TEMP "$SAVE" '/^ *<title>/s, *<title>\(.*\) ([^)]*).*<\/title>,\1,p' title $1 $TITLE
+   doItem $TEMP "$SAVE" '/^ *<title>/s, *<title>.* (\([^)]*\)).*<\/title>,\1,p' year $1 $YEAR
+   doItem $TEMP "$SAVE" '/Director[s]*:/,/<\/div>$/s,<[^<]*>,,gp' director $1 $DIRECTOR
+   doItem $TEMP "$SAVE" '/Writer[s]*:/,/<\/div>$/s,<[^<]*>,,gp' writer $1 $WRITER
+   doItem $TEMP "$SAVE" '/^<h4.*>Taglines:<\/h4>/,+1s,^\([^<]*\).*,\1,p' tagline $1 $TAG
+   doItem $TEMP "$SAVE" '/^<p>$/,+1s,<[^<]*>,,gp' plot $1 $PLOT
+   doItem $TEMP "$SAVE" '/Genre[s]*:/,/<\/div>$/{1,1d;s/<[^<]*>//g;s/&nbsp;/ /gp}' genre $1 $GENRE
+   doItem $TEMP "$SAVE" '/<h2>Cast<\/h2>/,/<\/table>/{s,.*<a *href="/name/[^<]*>\(.*\)</a>,\1 as,p;s,.*<a *href="/character/[^<]*>\(.*\)</a>,\1\, ,p}' cast $1 $CAST
+   doItem $TEMP "$SAVE" '/^<a.*href="\/media\/.*><img src=.*/s,.*<img src="\(.*\)",\1,p' coverart $1 $COVER
+   doItem $TEMP "$SAVE" '/^<span class="rating-rating">.*<\/span>/s,<span class="rating-rating">\(.*\)<span>\/10<\/span><\/span>,\1,p' rating $1 $RATING
 
    if [[ "$RENAME" == "true" ]]; then
        OLDFILE="$FILENAME"
@@ -218,7 +218,7 @@ doSearch() {
    else
       TEMPCHOICES=`mktemp`
       files=("${files[@]}" "$TEMPCHOICES")
-      < $TEMP tidy -iq -w 1000 2>/dev/null | sed 's/t\([dr][^>]*\)>/t\1>\n/g' | sed -n '/^ *<a href="\/title\/tt/s,^ *<a href="/title/\(tt[0-9]*\)/".*>\([^<]\+\)</a>\([^<]*\)<.*,\1%\2 \3,p' > $TEMPCHOICES
+      < $TEMP tidy -iq -w 1000 2>/dev/null | sed 's/<t\([dr][^>]*\)>/<t\1>\n/g' | sed -n '/^ *<a href="\/title\/tt/s,^ *<a href="/title/\(tt[0-9]*\)/".*>\([^<]\+\)</a> \([^<]*\).*,\1%\2 \3,p' > $TEMPCHOICES
       (( i = 1 ))
       IFS='
 '
